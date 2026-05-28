@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -16,15 +17,29 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("✅ Message sent successfully!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    emailjs
+      .send(
+        "service_lh5e93d",      // ✅ Your Service ID
+        "template_ztaae9n",     // ✅ Your Template ID
+        formData,               // ✅ Your form data
+        "nqwOBEyDdn0Ns_LSV"     // ✅ Your Public Key
+      )
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        alert("❌ Failed to send message: " + error.text);
+      });
   };
 
   return (
     <div className="contact-container">
-    <h1 className="contact-title">
-        <i className="fas fa-address-book"></i> Contact Us <i className="fas fa-address-book"></i>
-    </h1>
+      <h1 className="contact-title">
+        <i className="fas fa-address-book"></i> Contact Us{" "}
+        <i className="fas fa-address-book"></i>
+      </h1>
 
       <h2>Reach Out Directly</h2>
 
