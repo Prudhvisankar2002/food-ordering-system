@@ -64,7 +64,7 @@ function App() {
             <span>COOL DRINKS</span>
           </NavLink>
 
-          <NavLink to="/cart">
+          <NavLink to="/Cart">
             <i className="fas fa-shopping-cart"></i>
             <span>CART ({cartQuantity})</span>
           </NavLink>
@@ -118,7 +118,7 @@ function App() {
 
           <Route path="/orders" element={<Orders />} />
 
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/Cart" element={<Cart />} />
 
           <Route path="/login" element={<Login />} />
 
