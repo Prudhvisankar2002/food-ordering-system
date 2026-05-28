@@ -1,0 +1,115 @@
+.contact-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(
+    135deg,
+    #b7e8e4 0%,
+    #d7dff2 40%,
+    #f7bfdc 75%,
+    #9be7ea 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1a73e8;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 0 0 10px orange,
+               0 0 20px rgb(240, 206, 16),
+               0 0 30px #f97e26a2;
+}
+
+
+.contact-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🎨 Icon colors */
+.contact-info i.fa-envelope {
+  color: #e63946; /* Red for email */
+}
+
+.contact-info i.fa-phone {
+  color: #2a9d8f; /* Green for phone */
+}
+
+.contact-info i.fa-map-marker-alt {
+  color: #f4a261; /* Orange for address */
+}
+
+.contact-info i.fa-clock {
+  color: #457b9d; /* Blue for business hours */
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 2px solid #a8c7ff;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  background-color: #1a73e8;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #155ab6;
+}

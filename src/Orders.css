@@ -1,0 +1,110 @@
+/* ===== CONTAINER ===== */
+.orders-container {
+  min-height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background:
+  linear-gradient(
+    135deg,
+    #b7e8e4 0%,
+    #d7dff2 40%,
+    #f7bfdc 75%,
+    #9be7ea 100%
+  );
+}
+
+/* ===== TITLE ===== */
+.orders-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 0 0 10px orange,
+               0 0 20px rgb(240, 206, 16),
+               0 0 30px #f97e26a2;
+}
+
+/* ===== EMPTY ORDERS ===== */
+.empty-orders {
+  text-align: center;
+  font-size: 26px;
+  margin-top: 50px;
+  color: #777;
+  font-style: italic;
+}
+
+/* ===== ORDER CARD ===== */
+.order-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+}
+
+.order-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* ===== BILL ITEM ===== */
+.bill-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 8px 12px;
+  background: #fafafa;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.bill-item:hover {
+  background: #ffe0b2;
+}
+
+/* ===== TOTAL ===== */
+.order-total {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #222;
+  border-top: 2px dashed #ccc;
+  padding-top: 10px;
+}
+
+/* ===== DIVIDER ===== */
+.order-card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .order-card {
+    width: 95%;
+    text-align: center;
+  }
+
+  .bill-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .order-total {
+    text-align: center;
+  }
+}
