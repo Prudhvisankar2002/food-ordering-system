@@ -20,10 +20,10 @@ function Contact() {
 
     emailjs
       .send(
-        "service_lh5e93d",      // ✅ Your Service ID
-        "template_ztaae9n",     // ✅ Your Template ID
-        formData,               // ✅ Your form data
-        "nqwOBEyDdn0Ns_LSV"     // ✅ Your Public Key
+        "service_lh5e93d",     
+        "template_ztaae9n",     
+        formData,               
+        "nqwOBEyDdn0Ns_LSV"     
       )
       .then(() => {
         alert("✅ Message sent successfully!");

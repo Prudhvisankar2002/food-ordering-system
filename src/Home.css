@@ -1,13 +1,11 @@
-/* ===== CONTAINER ===== */
+/* ===== HERO SECTION ===== */
 .home-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  border-radius: 25px;
 }
 
-/* ===== VIDEO ===== */
 .bg-video {
   position: absolute;
   top: 0;
@@ -18,7 +16,6 @@
   z-index: -2;
 }
 
-/* ===== DARK OVERLAY ===== */
 .overlay {
   position: absolute;
   top: 0;
@@ -34,79 +31,146 @@
   color: white;
 }
 
-/* ===== TITLE ===== */
 .home-title {
-  color: rgb(4, 4, 4);
   font-size: 58px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-shadow: 0 0 10px orange, 0 0 20px #fff, 0 0 30px #ff6a00;
 }
 
-/* ===== SUBTITLE ===== */
 .home-subtitle {
   font-size: 24px;
-  color: white;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
+  margin-bottom: 35px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* ===== SMALLER ORDER BUTTON ===== */
 .order-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 200px;
   height: 50px;
-  padding: 8px 16px;
   border: none;
-  outline: none;
   border-radius: 25px;
   background: linear-gradient(135deg, #ff6a00, #ee0979);
   color: white;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
 }
-
-/* ===== BUTTON HOVER ===== */
 
 .order-btn:hover {
-
   transform: scale(1.05);
-
-  box-shadow:
-    0 8px 18px rgba(255,106,0,0.35);
+  box-shadow: 0 8px 18px rgba(255, 106, 0, 0.35);
 }
 
-/* ===== BUTTON CLICK ===== */
-
 .order-btn:active {
-
   transform: scale(0.92);
+}
+
+/* ===== POPULAR ITEMS SCROLL ===== */
+.popular-section {
+  background: linear-gradient(180deg, #0b132b, #1c2541);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.popular-subtitle {
+  color: #ff6a00;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.popular-title {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #ff6a00;
+}
+
+/* ===== HORIZONTAL AUTO-SCROLL ===== */
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 30px;
+  animation: scroll-left 5s linear infinite;
+}
+
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused; /* ✅ pause on hover */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== ITEM CARD ===== */
+.scroll-card {
+  flex: 0 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 180px;
+  height: 200px;
+  background: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.6);
+}
+
+.scroll-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.scroll-name {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin-top: 8px;
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .home-title {
     font-size: 34px;
-    padding: 0 10px;
   }
 
   .home-subtitle {
     font-size: 18px;
-    padding: 0 20px;
   }
 
   .order-btn {
     width: 180px;
     height: 45px;
     font-size: 14px;
-    padding: 6px 12px;
+  }
+
+  .popular-title {
+    font-size: 26px;
+  }
+
+  .scroll-card {
+    width: 140px;
+    height: 160px;
+  }
+
+  .scroll-name {
+    font-size: 13px;
   }
 }
