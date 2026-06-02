@@ -9,7 +9,7 @@ function Orders() {
 
   return (
     <div className="orders-container">
-      <h1 className="orders-title">📦 My Orders</h1>
+      <h1 className="orders-title">📦 My Orders 📦</h1>
 
       {orderData.length === 0 ? (
         <h2 className="empty-orders">No Orders Yet</h2>

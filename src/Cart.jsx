@@ -82,11 +82,26 @@
     const handlePlaceOrder=()=>{
         if(!isLoggedIn){
 
+            setDiscount(0);
+            setCupon("");
+            setEmail("");
+            setPaymentMethod("");
+
+            dispatch(resetCoupon());
+
+            setCardDetails({
+                number:"",
+                cvv:"",
+                expiry:"",
+                otp:""
+            });
+
+            setOtpSent(false);
+            setPaymentDone(false);
+
             navigate("/login");
-
             return;
-
-            }
+        }
 
         if(
         email.trim()===""||
