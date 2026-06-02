@@ -60,7 +60,6 @@ function AboutUs() {
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
-          <a href="/blog">Blog</a>
         </div>
       </footer>
     </div>

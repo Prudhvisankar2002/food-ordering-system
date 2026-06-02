@@ -6,25 +6,24 @@ function Home() {
   const navigate = useNavigate();
 
   const popularItems = [
-    { name: "Briyani", image: "/Images/veg_items/Biryani.jpg" },
-    { name: "Dosa", image: "/Images/veg_items/Dosa.jpg" },
-    { name: "Pasta", image: "/Images/veg_items/Pasta.jpg" },
-    { name: "Burger", image: "/Images/veg_items/Burger.jpg" },
+    { name: "Briyani", image: "/Images/veg_items/Biryani.jpg", category: "veg" },
+    { name: "MintMojito", image: "/Images/cooldrinks/Mint Mojito.jpg", category: "cooldrinks" },
+    { name: "Dosa", image: "/Images/veg_items/Dosa.jpg", category: "veg" },
+    { name: "Pasta", image: "/Images/veg_items/Pasta.jpg", category: "veg" },
+    { name: "OrangeJuice", image: "/Images/cooldrinks/Green Apple Mojito.jpg", category: "cooldrinks" },
+    { name: "Burger", image: "/Images/veg_items/Burger.jpg", category: "veg" },
 
-    { name: "ChickenBiryani", image: "/Images/Nonveg_items/ChickenBiryani.jpg" },
-    { name: "Fishfry", image: "/Images/Nonveg_items/FishFry.jpg" },
-    { name: "ChickenKebabs", image: "/Images/Nonveg_items/Chicken Kebabs.jpg" },
-    { name: "MuttonCurry", image: "/Images/Nonveg_items/MuttonCurry.jpg" },
+    { name: "OrangeJuice", image: "/Images/cooldrinks/Orange Juice.jpg", category: "cooldrinks" },
+    { name: "ChickenBiryani", image: "/Images/Nonveg_items/ChickenBiryani.jpg", category: "nonveg" },
+    { name: "Fishfry", image: "/Images/Nonveg_items/FishFry.jpg", category: "nonveg" },
+    { name: "ChickenKebabs", image: "/Images/Nonveg_items/Chicken Kebabs.jpg", category: "nonveg" },
+    { name: "MuttonCurry", image: "/Images/Nonveg_items/MuttonCurry.jpg", category: "nonveg" },
 
-    { name: "Kova", image: "/Images/Milk_items/Kova.jpg" },
-    { name: "Kulfi", image: "/Images/Milk_items/Kulfi.jpg" },
-    { name: "FlavoredMilk", image: "/Images/Milk_items/FlavoredMilk.jpg" },
-    { name: "Milkshake", image: "/Images/Milk_items/Milkshake.jpg" },
+    { name: "Kova", image: "/Images/Milk_items/Kova.jpg", category: "milk" },
+    { name: "Kulfi", image: "/Images/Milk_items/Kulfi.jpg", category: "milk" },
+    { name: "FlavoredMilk", image: "/Images/Milk_items/FlavoredMilk.jpg", category: "milk" },
+    { name: "Milkshake", image: "/Images/Milk_items/Milkshake.jpg", category: "milk" },
 
-    { name: "CocaCola", image: "/Images/cooldrinks/CocaCola.jpg" },
-    { name: "MintMojito", image: "/Images/cooldrinks/MintMojito.jpg" },
-    { name: "Limca", image: "/Images/cooldrinks/Limca.jpg" },
-    { name: "OrangeJuice", image: "/Images/cooldrinks/OrangeJuice.jpg" },
   ];
 
   return (
@@ -60,7 +59,11 @@ function Home() {
         <div className="scroll-container">
           <div className="scroll-content">
             {popularItems.map((item, index) => (
-              <div key={index} className="scroll-card">
+              <div
+                key={index}
+                className="scroll-card"
+                onClick={() => navigate(`/${item.category}`)}
+              >
                 <img src={item.image} alt={item.name} className="scroll-img" />
                 <p className="scroll-name">{item.name}</p>
               </div>
@@ -68,6 +71,40 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* ===== FOOTER ===== */}
+      <footer className="footer">
+        <h2 className="footer-title">DishDelight</h2>
+        <p className="footer-text">
+          Serving fresh meals with love and speed.<br />
+          Follow us and stay connected!
+        </p>
+
+        <div className="social-icons">
+          <a href="https://www.instagram.com/sankar_gowd/" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/Prudhvisankar2002" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/prudhvi-sankar-m-4357b0267/" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.youtube.com/@91.cse-bmathinaprudhvisank32" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-youtube"></i>
+          </a>
+        </div>
+
+        <hr className="footer-line" />
+
+        <p className="footer-copy">© 2026 DishDelight</p>
+
+        <div className="footer-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </footer>
     </>
   );
 }
