@@ -1,13 +1,22 @@
-.contact-container {
+/* ===== PAGE BACKGROUND ===== */
+.contact-page {
   min-height: 100vh;
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(
     135deg,
     #b7e8e4 0%,
     #d7dff2 40%,
     #f7bfdc 75%,
     #9be7ea 100%
-  );
+  ); /* ✅ full-page gradient */
+}
+
+/* ===== CONTACT CONTAINER ===== */
+.contact-container {
+  flex: 1;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +34,6 @@
                0 0 20px rgb(240, 206, 16),
                0 0 30px #f97e26a2;
 }
-
 
 .contact-container h2 {
   font-size: 2rem;
@@ -50,22 +58,12 @@
 }
 
 /* 🎨 Icon colors */
-.contact-info i.fa-envelope {
-  color: #e63946; /* Red for email */
-}
+.contact-info i.fa-envelope { color: #e63946; }
+.contact-info i.fa-phone { color: #2a9d8f; }
+.contact-info i.fa-map-marker-alt { color: #f4a261; }
+.contact-info i.fa-clock { color: #457b9d; }
 
-.contact-info i.fa-phone {
-  color: #2a9d8f; /* Green for phone */
-}
-
-.contact-info i.fa-map-marker-alt {
-  color: #f4a261; /* Orange for address */
-}
-
-.contact-info i.fa-clock {
-  color: #457b9d; /* Blue for business hours */
-}
-
+/* ===== FORM ===== */
 form {
   width: 100%;
   max-width: 600px;
@@ -112,4 +110,64 @@ button {
 
 button:hover {
   background-color: #155ab6;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 0 auto;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(255,106,0,0.3);
+  border-radius: 20px;
+}
+
+.footer-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 15px;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.social-icons a {
+  margin: 0 12px;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #222;
+  transform: scale(1.2);
+}
+
+.footer-line {
+  border: 0.5px solid #fff;
+  margin: 20px 0;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #222;
 }

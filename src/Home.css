@@ -234,3 +234,88 @@
   color: #222;
 }
 
+
+/* ===== COUPON BANNER ===== */
+.coupon-banner {
+
+  background: linear-gradient(180deg, #0b132b, #1c2541);
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  margin: 40px auto;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(255,106,0,0.3);
+  overflow: hidden; /* ✅ hides overflow for scrolling */
+}
+
+.coupon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.gift-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.coupon-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.coupon-subtitle {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* ===== AUTO-SCROLL ROW ===== */
+.coupon-row {
+  display: flex;
+  gap: 20px;
+  animation: scroll-coupons 15s linear infinite;
+}
+
+.coupon-banner:hover .coupon-row {
+  animation-play-state: paused; 
+}
+
+@keyframes scroll-coupons {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.coupon-card {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px dashed white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.coupon-card:hover {
+  transform: scale(1.08);
+}
+
+/* Color variations */
+.orange { background: #ffb347; }
+.green { background: #43e97b; }
+.pink { background: #ff4f81; }
+.blue { background: #2196f3; }
+.purple { background: #9c27b0; }
+.gold { background: #ffd700; color: #222; }
+.teal { background: #00bfa5; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .coupon-row {
+    flex-direction: column;
+    animation: none; /* disable scroll on mobile */
+  }
+}

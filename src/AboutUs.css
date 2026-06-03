@@ -1,65 +1,76 @@
+/* ===== ABOUT CONTAINER ===== */
 .about-container {
   min-height: 100vh;
-  padding: 30px;
-  display: flex;                 /* ✅ make it a flex container */
-  flex-direction: column;        /* stack content + footer */
-  justify-content: space-between;/* push footer down */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* keeps footer at bottom */
   background: linear-gradient(135deg, #b7e8e4 0%, #d7dff2 40%, #f7bfdc 75%, #9be7ea 100%);
   border-radius: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
+/* ===== TITLE ===== */
 .about-title {
   text-align: center;
-  font-size: 42px;
-  margin-bottom: 25px;
+  font-size: 46px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #222;
   text-shadow: 0 0 10px orange,
                0 0 20px rgb(240, 206, 16),
                0 0 30px #f97e26a2;
+  animation: fadeInDown 1.2s ease;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.about-card {
-  background: white;
-  border: 2px solid black;
-  border-radius: 20px;
-  padding: 20px;
+/* ===== VERTICAL SECTIONS ===== */
+.about-section {
+  margin-bottom: 60px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  transition: all 0.35s ease;
+  animation: fadeIn 1.2s ease;
 }
 
-.about-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(255,106,0,0.35);
-}
-
-.about-card img {
+.about-section img {
   width: 100%;
-  height: 180px;
-  border-radius: 14px;
+  max-width: 900px;   /* ✅ larger image size */
+  height: auto;
+  border-radius: 20px;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease;
 }
 
-.about-card h2 {
-  font-size: 20px;
+.about-section img:hover {
+  transform: scale(1.05);
+}
+
+.about-section h2 {
+  font-size: 28px;
   font-weight: bold;
   color: #222;
+  margin-bottom: 12px;
 }
 
-/* ===== FOOTER STYLING ===== */
+.about-section p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== FOOTER ===== */
 .footer {
   background: linear-gradient(135deg, #ff6a00, #ee0979);
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
   border-radius: 0 0 20px 20px;
-  margin-top: auto;              /* ✅ ensures footer stays at bottom */
+  margin-top: auto;
+  box-shadow: 0 8px 20px rgba(255,106,0,0.3);
+  animation: fadeIn 1.5s ease;
 }
 
 .footer-title {
@@ -108,4 +119,34 @@
 
 .footer-links a:hover {
   color: #222;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about-section img {
+    max-width: 100%;
+  }
+
+  .about-section h2 {
+    font-size: 22px;
+  }
+
+  .about-section p {
+    font-size: 15px;
+  }
+
+  .footer {
+    padding: 30px 15px;
+  }
 }
